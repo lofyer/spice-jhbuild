@@ -1,0 +1,20 @@
+# Copy this file to ~/.jhbuildrc-custom to get gtk-osx to use it
+# You can also copy it to ~/.jhbuildrc-spice and set the JHB environment
+# variable to "spice" to get jhbuild from gtk-osx to use it
+
+# target dirs for source and binaries
+_root = os.path.expanduser("~/spice-jhbuild")
+checkoutroot = os.path.join(_root, "source")
+prefix = os.path.join(_root, "inst")
+
+# spice gtk-osx moduleset
+moduleset = 'http://cgit.freedesktop.org/~teuf/spice-jhbuild/plain/modulesets/spice.xml?h=osx'
+modules = [ "meta-gtk-osx-bootstrap", "meta-gtk-osx-core", "virt-viewer" ]
+skip.append('libiconv')
+#for a gtk3 build use these modules
+#modules = [ "meta-gtk-osx-bootstrap", "meta-gtk-osx-gtk3", "virt-viewer-gtk3" ]
+#I've seen introspection generation totally hang during gtk+3 builds.
+#We don't need .gir to build virt-viewer, so let's disable introspection
+#altogether
+global autogenargs
+autogenargs = autogenargs + ' --disable-introspection'
