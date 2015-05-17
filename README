@@ -1,7 +1,7 @@
 SHORT INSTRUCTIONS
 
 - download XCode
-- run sudo xcode-select --switch /Applications/Xcode.app/ContentsDeveloper
+- run sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 - download and run
   http://cgit.freedesktop.org/~teuf/spice-jhbuild/plain/spice-osx-build-setup.sh?h=osx
 - copy ~/Source/spice-jhbuild/jhbuildrc to ~/.jhbuildrc-custom
@@ -18,11 +18,11 @@ This is a jhbuild moduleset to build remote-viewer on Mac OSX
 Before using it, you need to install XCode. I'm using XCode 4.3.3 for Lion.
 After installing it, I had to run the command below to setup everything
 as expected:
-sudo xcode-select --switch /Applications/Xcode.app/ContentsDeveloper
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
 If you want to build spice-gtk from git (this moduleset is building it
 from tarballs), you also need Perl::Text::CSV. To install it you can run:
-sudo xcode-select --switch /Applications/Xcode.app/ContentsDeveloper
+sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
 
 Once these prerequisite are addressed, you can download the
 spice-osx-build-setup.sh script from
