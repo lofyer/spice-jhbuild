@@ -53,3 +53,9 @@ done, "jhbuild run remote-viewer" will start remote-viewer.
 If a weird build error happens while building freetype, exit jhbuild, run
 "jhbuild buildone -cfa freetype" and restart "jhbuild build", this should
 get rid of it.
+
+BUNDLE HOWTO
+git clone https://github.com/jralls/gtk-mac-bundler.git
+jhbuild shell:
+$ make install
+jhbuild run gtk-mac-bunlder remote-viewer.bundle
